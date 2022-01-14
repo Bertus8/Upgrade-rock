@@ -1,0 +1,441 @@
+{
+    "App": "Upgrade Rock",
+    "Elements":[{
+        "Users":[{
+            "Name":"New User",
+            "Description":"Add new user",
+            "EndPoint":"/api/users",
+            "Action":"POST",
+            "Parameters":{
+                "name":"",
+                "email":"",
+                "password":""
+            },
+            "Response":{
+                "_id": "",
+                "name": "",
+                "email": "",
+                "password": "",
+                "createdAt": "",
+                "updatedAt": ""
+            }
+        },{
+            "Name":"Get User",
+            "Description":"Get a user",
+            "EndPoint":"/api/users/:id",
+            "Action":"GET",
+            "Authentication":{
+                "bearer":""
+            },
+            "Response":{
+                "name": "",
+                "email": ""
+            }
+        },{
+            "Name":"LogIn User",
+            "Description":"Log a user",
+            "EndPoint":"/api/users/login",
+            "Action":"POST",
+            "Parameters":{
+                "email":"",
+                "password":""
+            },
+            "Response":{
+                "token": ""
+            }
+        },{
+            "Name":"LogOut User",
+            "Description":"Log out a user ",
+            "EndPoint":"/api/users/login",
+            "Action":"POST",
+            "Authentication":{
+                "bearer":""
+            },
+            "Response":{
+                "token": null
+            }
+        }
+    ]},{
+        "Groups":[{
+            "Name":"New Group",
+            "Description":"Add new group",
+            "EndPoint":"/api/groups",
+            "Action":"POST",
+            "Authentication":{
+                "bearer":""
+            },
+            "Parameters":{
+                "name":"",
+                "year":"",
+                "genre":["Genre_ID"],
+                "albums":["ALBUM_ID"],
+                "members":["MEMBER_ID"],
+                "oldMembers":["MEMBER_ID"]
+            },
+            "Response":{
+                "_id": "",
+                "name": "",
+                "year": 0,
+                "genre": ["Genre_ID"],
+                "albums": ["ALBUM_ID"],
+                "members": ["MEMBER_ID"],
+                "oldMembers": ["MEMBER_ID"]
+            }
+        },{
+            "Name":"Get Group",
+            "Description":"Get a group",
+            "EndPoint":"/api/groups/:id",
+            "Action":"GET",
+            "Response":{
+                "_id": "",
+                "name": "",
+                "year": 0,
+                "genre": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "description":"",
+                        "location":"",
+                        "decade":0
+                    }
+                ],
+                "albums": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "groupName":"",
+                        "genre":["Genre_ID"],
+                        "year":0,
+                        "discographic":"",
+                        "img":""
+                    }],
+                "members": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "surname":"",
+                        "birthDate":"",
+                        "role":[""]
+                    }
+                ],
+                "oldMembers": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "surname":"",
+                        "birthDate":"",
+                        "role":[""]
+                    }
+                ]
+            }
+        },{
+            "Name":"Get All Groups",
+            "Description":"Get all groups",
+            "EndPoint":"/api/groups",
+            "Action":"GET",
+            "Response":{
+                "_id": "",
+                "name": "",
+                "year": 0,
+                "genre": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "description":"",
+                        "location":"",
+                        "decade":0
+                    }
+                ],
+                "albums": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "groupName":"",
+                        "genre":["Genre_ID"],
+                        "year":0,
+                        "discographic":"",
+                        "img":""
+                    }],
+                "members": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "surname":"",
+                        "birthDate":"",
+                        "role":[""]
+                    }
+                ],
+                "oldMembers": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "surname":"",
+                        "birthDate":"",
+                        "role":[""]
+                    }
+                ]
+            }
+        },{
+            "Name":"Update Group",
+            "Description":"Update a group",
+            "EndPoint":"/api/groups",
+            "Action":"PATCH",
+            "Authentication":{
+                "bearer":""
+            },
+            "Parameters":{
+                "name":"",
+                "year":"",
+                "genre":["Genre_ID"],
+                "albums":["ALBUM_ID"],
+                "members":["MEMBER_ID"],
+                "oldMembers":["MEMBER_ID"]
+            },
+            "Response":{
+                "_id": "",
+                "name": "",
+                "year": 0,
+                "genre": ["Genre_ID"],
+                "albums": ["ALBUM_ID"],
+                "members": ["MEMBER_ID"],
+                "oldMembers": ["MEMBER_ID"]
+            }
+        }
+    ]
+    },{
+        "Albums":[{
+            "Name":"New album",
+            "Description":"Add new album",
+            "EndPoint":"/api/albums",
+            "Action":"POST",
+            "Authentication":{
+                "bearer":""
+            },
+            "Parameters":{
+                "name":"",
+                "groupName":"",
+                "genre":["Genre_ID"],
+                "year":0,
+                "discographic":"",
+                "img":""
+            },
+            "Response":{
+                "_id": "",
+                "name":"",
+                "groupName":"",
+                "genre":["Genre_ID"],
+                "year":0,
+                "discographic":"",
+                "img":""
+            }
+        },{
+            "Name":"Get Album",
+            "Description":"Get a album",
+            "EndPoint":"/api/albums/:id",
+            "Action":"GET",
+            "Response":{
+                "_id": "",
+                "name":"",
+                "groupName":"",
+                "genre":[
+                    {
+                        "_id": "",
+                        "name":"",
+                        "description":"",
+                        "location":"",
+                        "decade":0
+                    }
+                ],
+                "year":0,
+                "discographic":"",
+                "img":""
+            }
+        },{
+            "Name":"Get All Albums",
+            "Description":"Get all albums",
+            "EndPoint":"/api/albums",
+            "Action":"GET",
+            "Response":{
+                "_id": "",
+                "name":"",
+                "groupName":"",
+                "genre":[
+                    {
+                        "_id": "",
+                        "name":"",
+                        "description":"",
+                        "location":"",
+                        "decade":0
+                    }
+                ],
+                "year":0,
+                "discographic":"",
+                "img":""
+            }
+        },{
+            "Name":"Update Album",
+            "Description":"Update a album",
+            "EndPoint":"/api/albums",
+            "Action":"PATCH",
+            "Authentication":{
+                "bearer":""
+            },
+            "Parameters":{
+                "name":"",
+                "groupName":"",
+                "genre":["Genre_ID"],
+                "year":0,
+                "discographic":"",
+                "img":""
+            },
+            "Response":{
+                "_id": "",
+                "name":"",
+                "groupName":"",
+                "genre":["Genre_ID"],
+                "year":0,
+                "discographic":"",
+                "img":""
+            }
+        }
+    ]
+    },{
+        "Members":[{
+            "Name":"New member",
+            "Description":"Add new member",
+            "EndPoint":"/api/members",
+            "Action":"POST",
+            "Authentication":{
+                "bearer":""
+            },
+            "Parameters":{
+                "name":"",
+                "surname":"",
+                "birthDate":"",
+                "role":[""]
+            },
+            "Response":{
+                "_id": "",
+                "name":"",
+                "surname":"",
+                "birthDate":"",
+                "role":[""]
+            }
+        },{
+            "Name":"Get member",
+            "Description":"Get a member",
+            "EndPoint":"/api/members/:id",
+            "Action":"GET",
+            "Response":{
+                "_id": "",
+                "name":"",
+                "surname":"",
+                "birthDate":"",
+                "role":[""]
+            }
+        },{
+            "Name":"Get All members",
+            "Description":"Get all members",
+            "EndPoint":"/api/members",
+            "Action":"GET",
+            "Response":{
+                "_id": "",
+                "name":"",
+                "surname":"",
+                "birthDate":"",
+                "role":[""]
+            }
+        },{
+            "Name":"Update member",
+            "Description":"Update a member",
+            "EndPoint":"/api/members",
+            "Action":"PATCH",
+            "Authentication":{
+                "bearer":""
+            },
+            "Parameters":{
+                "name":"",
+                "surname":"",
+                "birthDate":"",
+                "role":[""]
+            },
+            "Response":{
+                "_id": "",
+                "name":"",
+                "surname":"",
+                "birthDate":"",
+                "role":[""]
+            }
+        }
+    ]
+    },{
+        "genres":[{
+            "Name":"New genre",
+            "Description":"Add new genre",
+            "EndPoint":"/api/genres",
+            "Action":"POST",
+            "Authentication":{
+                "bearer":""
+            },
+            "Parameters":{
+                "name":"",
+                "description":"",
+                "location":"",
+                "decade":0
+            },
+            "Response":{
+                "_id": "",
+                "name":"",
+                "description":"",
+                "location":"",
+                "decade":0
+            }
+        },{
+            "Name":"Get genre",
+            "Description":"Get a genre",
+            "EndPoint":"/api/genres/:id",
+            "Action":"GET",
+            "Response":{
+                "_id": "",
+                "name":"",
+                "description":"",
+                "location":"",
+                "decade":0
+            }
+        },{
+            "Name":"Get All genres",
+            "Description":"Get all genres",
+            "EndPoint":"/api/genres",
+            "Action":"GET",
+            "Response":{
+                "_id": "",
+                "name":"",
+                "description":"",
+                "location":"",
+                "decade":0
+            }
+        },{
+            "Name":"Update genre",
+            "Description":"Update a genre",
+            "EndPoint":"/api/genres",
+            "Action":"PATCH",
+            "Authentication":{
+                "bearer":""
+            },
+            "Parameters":{
+                "name":"",
+                "description":"",
+                "location":"",
+                "decade":0
+            },
+            "Response":{
+                "_id": "",
+                "name":"",
+                "description":"",
+                "location":"",
+                "decade":0
+            }
+        }
+    ]
+    }]
+}
