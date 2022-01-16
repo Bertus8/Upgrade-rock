@@ -178,7 +178,7 @@
         },{
             "Name":"Update Group",
             "Description":"Update a group",
-            "EndPoint":"/api/groups",
+            "EndPoint":"/api/groups/:id",
             "Action":"PATCH",
             "Authentication":{
                 "bearer":""
@@ -199,6 +199,168 @@
                 "albums": ["ALBUM_ID"],
                 "members": ["MEMBER_ID"],
                 "oldMembers": ["MEMBER_ID"]
+            }
+        }
+        ,{
+            "Name":"Update Albums Group",
+            "Description":"Update albums array of a group",
+            "EndPoint":"/api/groups/addAlbumToGroup/:id",
+            "Action":"PATCH",
+            "Authentication":{
+                "bearer":""
+            },
+            "Parameters":{
+                "albums":["ALBUM_ID"]
+            },
+            "Response":{
+                "_id": "",
+                "name": "",
+                "year": 0,
+                "genre": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "description":"",
+                        "location":"",
+                        "decade":0
+                    }
+                ],
+                "albums": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "groupName":"",
+                        "genre":["Genre_ID"],
+                        "year":0,
+                        "discographic":"",
+                        "img":""
+                    }],
+                "members": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "surname":"",
+                        "birthDate":"",
+                        "role":[""]
+                    }
+                ],
+                "oldMembers": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "surname":"",
+                        "birthDate":"",
+                        "role":[""]
+                    }
+                ]
+            }
+        }
+        ,{
+            "Name":"Update Members Group",
+            "Description":"Update members array of a group",
+            "EndPoint":"/api/groups/addMemberToGroup/:id",
+            "Action":"PATCH",
+            "Authentication":{
+                "bearer":""
+            },
+            "Parameters":{
+                "members": ["MEMBER_ID"]
+            },
+            "Response":{
+                "_id": "",
+                "name": "",
+                "year": 0,
+                "genre": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "description":"",
+                        "location":"",
+                        "decade":0
+                    }
+                ],
+                "albums": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "groupName":"",
+                        "genre":["Genre_ID"],
+                        "year":0,
+                        "discographic":"",
+                        "img":""
+                    }],
+                "members": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "surname":"",
+                        "birthDate":"",
+                        "role":[""]
+                    }
+                ],
+                "oldMembers": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "surname":"",
+                        "birthDate":"",
+                        "role":[""]
+                    }
+                ]
+            }
+        }
+        ,{
+            "Name":"Update Old Members Group",
+            "Description":"Update oldMembers array of a group",
+            "EndPoint":"/api/groups/addOldMemberToGroup/:id",
+            "Action":"PATCH",
+            "Authentication":{
+                "bearer":""
+            },
+            "Parameters":{
+                "oldMembers": ["MEMBER_ID"]
+            },
+            "Response":{
+                "_id": "",
+                "name": "",
+                "year": 0,
+                "genre": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "description":"",
+                        "location":"",
+                        "decade":0
+                    }
+                ],
+                "albums": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "groupName":"",
+                        "genre":["Genre_ID"],
+                        "year":0,
+                        "discographic":"",
+                        "img":""
+                    }],
+                "members": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "surname":"",
+                        "birthDate":"",
+                        "role":[""]
+                    }
+                ],
+                "oldMembers": [
+                    {
+                        "_id": "",
+                        "name":"",
+                        "surname":"",
+                        "birthDate":"",
+                        "role":[""]
+                    }
+                ]
             }
         }
     ]
